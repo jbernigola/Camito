@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sofia Sans", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../assets/img/fondo-rojo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+main::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: rgba(11, 225, 240, 0.1);
+}
+main .content {
+  position: relative;
+  z-index: 1;
+}
+main .content h1 {
+  color: #FFF;
+  font-size: 28px;
+  font-weight: 900;
+}
+main .content h1 span {
+  font-weight: 100;
+}
+@media screen and (min-width: 480px) {
+  main .content h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .content h1 {
+    font-size: 42px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .content h1 {
+    font-size: 56px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .content h1 {
+    font-size: 72px;
+  }
+}
+main .content h2 {
+  color: #FFF;
+  font-size: 42px;
+  font-weight: 900;
+  margin: 30px 0px;
+}
+@media screen and (min-width: 480px) {
+  main .content h2 {
+    font-size: 56px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .content h2 {
+    font-size: 72px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .content h2 {
+    font-size: 96px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .content h2 {
+    font-size: 128px;
+  }
+}
+main .countdown {
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 400;
+}
+@media screen and (min-width: 480px) {
+  main .countdown {
+    font-size: 42px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .countdown {
+    font-size: 56px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .countdown {
+    font-size: 72px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .countdown {
+    font-size: 88px;
+  }
+}
+main .boton-display-none {
+  display: none;
+}
+main .boton-display {
+  cursor: pointer;
+  margin-top: 50px;
+  width: 350px;
+  --glow-color: rgb(255, 255, 255);
+  --glow-spread-color: rgba(255, 252, 252, 0.5);
+  --btn-color: rgb(255, 0, 0, 0.5);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Sofia Sans", cursive;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 2em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+main .boton-display::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(10px);
+  opacity: 0.2;
+  transform: perspective(1.5em) rotateX(50deg) scale(1, 0.6);
+}
+main .boton-display:hover {
+  color: var(--btn-color);
+  --glow-spread-color: rgba(255, 252, 252, 0.3);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 35px 1000px var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+}
+main .boton-display:active {
+  --btn-color: rgb(255, 0, 0);
+  color: var(--btn-color);
+  --glow-spread-color: rgba(255, 252, 252, 0.3);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1.6em 0.25em var(--btn-color), 0 0 35px 1000px var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+}/*# sourceMappingURL=countdown.css.map */

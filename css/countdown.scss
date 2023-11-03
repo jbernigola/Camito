@@ -1,0 +1,189 @@
+// Media Query Mixin
+@mixin breakpoint ($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sofia Sans", sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background-image: url("../assets/img/fondo-rojo.jpg");
+    background-size: cover;
+    background-position: center;
+
+
+    &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background-color: rgba(11, 225, 240, .1)
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+
+
+        h1 {
+            color: #FFF;
+            font-size: 28px;
+            font-weight: 900;
+
+            span {
+                font-weight: 100;
+            }
+
+            @include breakpoint(480px) {
+                font-size: 36px;
+            }
+
+            @include breakpoint(768px) {
+                font-size: 42px;
+            }
+
+            @include breakpoint(1024px) {
+                font-size: 56px;
+            }
+
+            @include breakpoint(1280px) {
+                font-size: 72px;
+            }
+        }
+
+        h2 {
+            color: #FFF;
+            font-size: 42px;
+            font-weight: 900;
+            margin: 30px 0px;
+
+            @include breakpoint(480px) {
+                font-size: 56px;
+            }
+
+            @include breakpoint(768px) {
+                font-size: 72px;
+            }
+
+            @include breakpoint(1024px) {
+                font-size: 96px;
+            }
+
+            @include breakpoint(1280px) {
+                font-size: 128px;
+            }
+        }
+
+
+    }
+
+    .countdown {
+        color: #FFF;
+        font-size: 36px;
+        font-weight: 400;
+
+        @include breakpoint(480px) {
+            font-size: 42px;
+        }
+
+        @include breakpoint(768px) {
+            font-size: 56px;
+        }
+
+        @include breakpoint(1024px) {
+            font-size: 72px;
+        }
+
+        @include breakpoint(1280px) {
+            font-size: 88px;
+        }
+    }
+
+    ////////////////////////////////
+    .boton-display-none {
+        display: none;
+    }
+
+    .boton-display {
+        cursor: pointer;
+        margin-top: 50px;
+        width: 350px;
+        --glow-color: rgb(255, 255, 255);
+        --glow-spread-color: rgba(255, 252, 252, 0.5);
+        --btn-color: rgb(255, 0, 0, 0.5);
+        border: 0.25em solid var(--glow-color);
+        padding: 1em 3em;
+        color: var(--glow-color);
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Sofia Sans", cursive;
+        background-color: var(--btn-color);
+        border-radius: 1em;
+        outline: none;
+        box-shadow: 0 0 1em 0.25em var(--glow-color),
+            0 0 2em 1em var(--glow-spread-color),
+            inset 0 0 0.75em 0.25em var(--glow-color);
+        position: relative;
+        transition: all 0.3s;
+
+        &::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(10px);
+            opacity: 0.2;
+            transform: perspective(1.5em) rotateX(50deg) scale(1, 0.6);
+        }
+
+        &:hover {
+            color: var(--btn-color);
+            --glow-spread-color: rgba(255, 252, 252, 0.3);
+
+            background-color: var(--glow-color);
+            box-shadow: 0 0 .6em 0.25em var(--glow-color),
+                0 0 35px 1000px var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+        }
+
+        &:active {
+            --btn-color: rgb(255, 0, 0);
+            color: var(--btn-color);
+            --glow-spread-color: rgba(255, 252, 252, 0.3);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 1.6em 0.25em var(--btn-color),
+                0 0 35px 1000px var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+        }
+    }
+
+
+}
