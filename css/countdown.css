@@ -8,6 +8,17 @@ body {
   font-family: "Sofia Sans", sans-serif;
 }
 
+.fondo {
+  background-image: url("../assets/img/24-12/CDBA/fav1.jpg");
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  filter: blur(4px);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -17,9 +28,7 @@ main {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url("../assets/img/fondo-rojo.jpg");
-  background-size: cover;
-  background-position: center;
+  z-index: 1;
 }
 main::after {
   display: block;
@@ -115,7 +124,7 @@ main .countdown {
     font-size: 88px;
   }
 }
-main .boton-display-none {
+main .none {
   display: none;
 }
 main .boton-display {

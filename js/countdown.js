@@ -1,17 +1,24 @@
 // Setup End Date for Countdown (getTime == Time in Milleseconds)
-let launchDate = new Date("Dec 24, 2023 00:00:00").getTime();
+let launchDate = new Date("Nov 07, 2023 12:07:10").getTime();
 //"Dec 24, 2023 00:00:00"
 // Setup Timer to tick every 1 second
 let timer = setInterval(tick, 1000);
 
+
+let now = new Date().getTime();
+let t = launchDate - now;
+
+
+
+
+
 function tick() {
+    
     // Get current time
     let now = new Date().getTime();
     // Get the difference in time to get time left until reaches 0
     let t = launchDate - now;
 
-    let camito = 'Camito ♥ 1y'
-    let camito2 = " "
     // Check if time is above 0
     if (t > 0) {
         // Setup Days, hours, seconds and minutes
@@ -38,15 +45,15 @@ function tick() {
         // Set time on document
         document.querySelector('.countdown').innerText = time;
     }
-/*
-    const boton = document.querySelector(".boton-displayed-none");
+
+    const boton = document.querySelector(".boton-display");
     if (t <= 0) {
-        boton.classList.remove("-none");
+        boton.classList.remove("none");
     }
     else {
-        boton.classList.add("-none");
+        boton.classList.add("none");
     }
-*/
+
 
 
 }
