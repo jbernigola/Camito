@@ -16,7 +16,7 @@ body {
     font-family: "Sofia Sans", sans-serif;
 }
 
-.fondo{
+.fondo {
     background-image: url("../assets/img/24-12/CDBA/fav1.jpg");
     background-size: contain;
     background-position: center;
@@ -137,13 +137,15 @@ main {
         display: none;
     }
 
+
     .boton-display {
+        align-items: center;
         cursor: pointer;
         margin-top: 50px;
-        width: 350px;
+        min-width: 25vw;
         --glow-color: rgb(255, 255, 255);
         --glow-spread-color: rgba(255, 252, 252, 0.5);
-        --btn-color: rgb(255, 0, 0, 0.5);
+        --btn-color: rgba(0, 221, 255, 0.5);
         border: 0.25em solid var(--glow-color);
         padding: 1em 3em;
         color: var(--glow-color);
@@ -153,45 +155,46 @@ main {
         background-color: var(--btn-color);
         border-radius: 1em;
         outline: none;
-        box-shadow: 0 0 1em 0.25em var(--glow-color),
-            0 0 2em 1em var(--glow-spread-color),
-            inset 0 0 0.75em 0.25em var(--glow-color);
+        box-shadow: 0 0 .6em 0 var(--glow-color),
+            0 0 35px 0 var(--glow-spread-color),
+            inset 0 0 0.5em 0 var(--glow-color);
         position: relative;
-        transition: all 0.3s;
-
-        &::after {
-            pointer-events: none;
-            content: "";
-            position: absolute;
-            top: 120%;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: var(--glow-spread-color);
-            filter: blur(10px);
-            opacity: 0.2;
-            transform: perspective(1.5em) rotateX(50deg) scale(1, 0.6);
-        }
+        transition: 0.3s;
 
         &:hover {
-            color: var(--btn-color);
+            box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 2em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
             --glow-spread-color: rgba(255, 252, 252, 0.3);
+            scale: .9;
 
-            background-color: var(--glow-color);
-            box-shadow: 0 0 .6em 0.25em var(--glow-color),
-                0 0 35px 1000px var(--glow-spread-color),
-                inset 0 0 0.5em 0.25em var(--glow-color);
         }
 
         &:active {
-            --btn-color: rgb(255, 0, 0);
-            color: var(--btn-color);
+            --btn-color: rgb(0, 221, 255, 0.7);
+            color: white;
             --glow-spread-color: rgba(255, 252, 252, 0.3);
-            background-color: var(--glow-color);
-            box-shadow: 0 0 1.6em 0.25em var(--btn-color),
-                0 0 35px 1000px var(--glow-spread-color),
-                inset 0 0 0.5em 0.25em var(--glow-color);
+            background-color: var(--btn-color);
+            box-shadow: 0 0 1.6em 0 var(--btn-color),
+                0 0 0 0 var(--glow-spread-color),
+                0 0 0 0 var(--glow-color);
         }
+
+        /*         
+                &::after {
+                    pointer-events: none;
+                    content: "";
+                    position: absolute;
+                    top: 120%;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: var(--glow-spread-color);
+                    filter: blur(10px);
+                    opacity: 0.2;
+                    transform: perspective(1.5em) rotateX(50deg) scale(1, 0.6);
+                }
+                */
     }
 
 
