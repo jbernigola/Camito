@@ -1,0 +1,5 @@
+"""Tengo que corregir el blur. Cuando hago zoom en la pagina con la rueda, 
+el blur al estar en pixeles se reduce."""
+        Idea: — Podria ponerlo con alguna medida porcentual.
+
+
