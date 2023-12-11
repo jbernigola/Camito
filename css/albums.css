@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fondo-catalogo {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  filter: blur(0.5vh);
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+main .albumes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "CDBA  SB1" "COLON SB2";
+  width: 850px;
+  height: 500px;
+}
+main .albumes .album {
+  z-index: 1;
+  height: 250px;
+}
+main .albumes .album a:hover img {
+  opacity: 1;
+}
+main #CDBA {
+  grid-area: CDBA;
+  background-color: red;
+  border-radius: 20px 0 0 0;
+}
+main #SB1 {
+  grid-area: SB1;
+  background-color: green;
+  border-radius: 0 20px 0 0;
+}
+main #COLON {
+  grid-area: COLON;
+  background-color: yellow;
+  border-radius: 0 0 0 20px;
+}
+main #SB2 {
+  grid-area: SB2;
+  background-color: blueviolet;
+  border-radius: 0 0 20px 0;
+}
+main #Salidas {
+  display: none;
+  position: absolute;
+  top: 35vh;
+  height: 25vh;
+  width: 25vw;
+  background-color: gray;
+  z-index: 1;
+}/*# sourceMappingURL=albums.css.map */

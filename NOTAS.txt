@@ -1,2 +1,5 @@
-MUSICA EN CADA PAGINA 
-""" <audio src="micancion.mp3" autoplay="autoplay" loop="loop"></audio> """
+IDEAS
+    - Musica de fondo en cada pagina ---> "<audio src="micancion.mp3" autoplay="autoplay" loop="loop">  </audio>"
+
+CORRECCIONES
+    - Blur del countdown corregidogit st
