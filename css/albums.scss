@@ -11,6 +11,7 @@
 }
 
 
+
 .fondo-catalogo {
     background-image: url("../assets/img/COLON/para-puzzle1.jpg");
     background-size: contain;
@@ -20,6 +21,7 @@
     height: 100vh;
     width: 100%;
     filter: blur(.5vh);
+
 }
 
 main {
@@ -28,6 +30,9 @@ main {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+
+
 
     .albumes {
         display: grid;
@@ -42,12 +47,10 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1;
+            z-index: 0;
             height: 150px;
             width: 150px;
             overflow: hidden;
-
-
 
             @include breakpoint(480px) {
                 height: 175px;
@@ -69,31 +72,55 @@ main {
                 width: 250px;
             }
 
-            img {
-                opacity: .8;
-                width: 100%;
-                transition: all 0.3s;
-            }
 
 
             a {
+                text-decoration: none;
+                color: white;
                 position: relative;
+                transition: all 0.3s;
 
                 .supertexto {
+                    width: 100%;
+                    height: 100%;
                     position: absolute;
-                    z-index: 7;
-                    margin-left: auto;
-                    margin-right: auto;
+                    top: 0;
                     left: 0;
-                    right: 0;
-                    text-align: center;
+                    background: rgba(0, 0, 0, .6);
+                    opacity: 0;
+                    transition:  opacity 0.5s;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
 
+                    h2 {
+                        text-align: center;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
                 }
 
-                &:hover {
-                    img {
+                img {
+                    position: relative;
+                    opacity: 1;
+                    width: 100%;
+                    transition: all 0.3s;
+                    z-index: 0;
+                }
 
+
+                &:hover {
+                    .supertexto {
+                        visibility: visible;
                         opacity: 1;
+                    }
+
+                    img {
+                        transform: scale(1.1);
+                        filter: blur(.5vh);
                     }
                 }
             }
@@ -102,7 +129,6 @@ main {
 
     #CDBA {
         grid-area: CDBA;
-        background-color: red;
         border-radius: 20px 0 0 0;
 
         img {
@@ -116,10 +142,10 @@ main {
         background-color: green;
         border-radius: 0 20px 0 0;
         align-items: flex-start;
-        
 
-        img {  
-            
+
+        img {
+
             border-radius: 0 20px 0 0;
         }
     }

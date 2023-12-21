@@ -21,6 +21,7 @@ main {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 main .albumes {
   display: grid;
@@ -32,7 +33,7 @@ main .albumes .album {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 0;
   height: 150px;
   width: 150px;
   overflow: hidden;
@@ -61,29 +62,49 @@ main .albumes .album {
     width: 250px;
   }
 }
-main .albumes .album img {
-  opacity: 0.8;
-  width: 100%;
+main .albumes .album a {
+  text-decoration: none;
+  color: white;
+  position: relative;
   transition: all 0.3s;
 }
-main .albumes .album a {
-  position: relative;
-}
 main .albumes .album a .supertexto {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  z-index: 7;
-  margin-left: auto;
-  margin-right: auto;
+  top: 0;
   left: 0;
-  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .albumes .album a .supertexto h2 {
   text-align: center;
 }
-main .albumes .album a:hover img {
+main .albumes .album a .supertexto p {
+  text-align: center;
+}
+main .albumes .album a img {
+  position: relative;
   opacity: 1;
+  width: 100%;
+  transition: all 0.3s;
+  z-index: 0;
+}
+main .albumes .album a:hover .supertexto {
+  visibility: visible;
+  opacity: 1;
+}
+main .albumes .album a:hover img {
+  transform: scale(1.1);
+  filter: blur(0.5vh);
 }
 main #CDBA {
   grid-area: CDBA;
-  background-color: red;
   border-radius: 20px 0 0 0;
 }
 main #CDBA img {
