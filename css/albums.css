@@ -27,12 +27,44 @@ main .albumes {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "CDBA  SB1" "COLON SB2";
-  width: 850px;
-  height: 500px;
 }
 main .albumes .album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
-  height: 250px;
+  height: 150px;
+  width: 150px;
+}
+@media screen and (min-width: 480px) {
+  main .albumes .album {
+    height: 175px;
+    width: 175px;
+  }
+}
+@media screen and (min-width: 768px) {
+  main .albumes .album {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .albumes .album {
+    height: 225px;
+    width: 225px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  main .albumes .album {
+    height: 250px;
+    width: 250px;
+  }
+}
+main .albumes .album img {
+  opacity: 0.8;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 main .albumes .album a:hover img {
   opacity: 1;
@@ -41,10 +73,17 @@ main #CDBA {
   grid-area: CDBA;
   background-color: red;
   border-radius: 20px 0 0 0;
+  padding: 5px 0 0 5px;
+}
+main #CDBA img {
+  border-radius: 20px 0 0 0;
 }
 main #SB1 {
   grid-area: SB1;
   background-color: green;
+  border-radius: 0 20px 0 0;
+}
+main #SB1 img {
   border-radius: 0 20px 0 0;
 }
 main #COLON {
@@ -52,17 +91,25 @@ main #COLON {
   background-color: yellow;
   border-radius: 0 0 0 20px;
 }
+main #COLON img {
+  border-radius: 0 0 0 20px;
+}
 main #SB2 {
   grid-area: SB2;
   background-color: blueviolet;
+  border-radius: 0 0 20px 0;
+}
+main #SB2 img {
   border-radius: 0 0 20px 0;
 }
 main #Salidas {
   display: none;
   position: absolute;
   top: 35vh;
-  height: 25vh;
-  width: 25vw;
   background-color: gray;
   z-index: 1;
+  border-radius: 20px;
+}
+main #Salidas img {
+  border-radius: 20px;
 }/*# sourceMappingURL=albums.css.map */

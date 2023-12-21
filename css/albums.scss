@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+@mixin breakpoint ($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
 
 .fondo-catalogo {
     background-image: url("../assets/img/COLON/para-puzzle1.jpg");
@@ -30,16 +36,49 @@ main {
         grid-template-areas:
             "CDBA  SB1"
             "COLON SB2";
-        width: 850px;
-        height: 500px;
+
 
         .album {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 1;
-            height: 250px;
+            height: 150px;
+            width: 150px;
+
+            @include breakpoint(480px) {
+                height: 175px;
+                width: 175px;
+            }
+
+            @include breakpoint(768px) {
+                height: 200px;
+                width: 200px;
+            }
+
+            @include breakpoint(1024px) {
+                height: 225px;
+                width: 225px;
+            }
+
+            @include breakpoint(1280px) {
+                height: 250px;
+                width: 250px;
+            }
+
+            img {
+                opacity: .8;
+                width: 100%;
+                overflow: hidden;
+                transition: all 0.3s;
+
+            }
+
 
             a {
                 &:hover {
                     img {
+
                         opacity: 1;
                     }
                 }
@@ -51,6 +90,11 @@ main {
         grid-area: CDBA;
         background-color: red;
         border-radius: 20px 0 0 0;
+        padding: 5px 0 0 5px;
+
+        img {
+            border-radius: 20px 0 0 0;
+        }
 
     }
 
@@ -59,12 +103,19 @@ main {
         background-color: green;
         border-radius: 0 20px 0 0;
 
+        img {
+            border-radius: 0 20px 0 0;
+        }
     }
 
     #COLON {
         grid-area: COLON;
         background-color: yellow;
         border-radius: 0 0 0 20px;
+
+        img {
+            border-radius: 0 0 0 20px;
+        }
     }
 
     #SB2 {
@@ -72,16 +123,22 @@ main {
         background-color: blueviolet;
         border-radius: 0 0 20px 0;
 
+        img {
+            border-radius: 0 0 20px 0;
+        }
     }
 
     #Salidas {
         display: none;
         position: absolute;
         top: 35vh;
-        height: 25vh;
-        width: 25vw;
         background-color: gray;
         z-index: 1;
+        border-radius: 20px;
+
+        img {
+            border-radius: 20px;
+        }
     }
 
 }
