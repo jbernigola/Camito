@@ -45,6 +45,9 @@ main {
             z-index: 1;
             height: 150px;
             width: 150px;
+            overflow: hidden;
+
+
 
             @include breakpoint(480px) {
                 height: 175px;
@@ -69,13 +72,24 @@ main {
             img {
                 opacity: .8;
                 width: 100%;
-                overflow: hidden;
                 transition: all 0.3s;
-
             }
 
 
             a {
+                position: relative;
+
+                .supertexto {
+                    position: absolute;
+                    z-index: 7;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+
+                }
+
                 &:hover {
                     img {
 
@@ -90,7 +104,6 @@ main {
         grid-area: CDBA;
         background-color: red;
         border-radius: 20px 0 0 0;
-        padding: 5px 0 0 5px;
 
         img {
             border-radius: 20px 0 0 0;
@@ -102,8 +115,11 @@ main {
         grid-area: SB1;
         background-color: green;
         border-radius: 0 20px 0 0;
+        align-items: flex-start;
+        
 
-        img {
+        img {  
+            
             border-radius: 0 20px 0 0;
         }
     }
