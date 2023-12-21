@@ -42,34 +42,33 @@ main {
             "CDBA  SB1"
             "COLON SB2";
 
-
         .album {
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 0;
-            height: 150px;
-            width: 150px;
+            height:120px;
+            width: 120px;
             overflow: hidden;
 
             @include breakpoint(480px) {
-                height: 175px;
-                width: 175px;
+                height: calc(150px + 5vw);
+                width: calc(150px + 5vw);
             }
 
             @include breakpoint(768px) {
-                height: 200px;
-                width: 200px;
+                height: calc(150px + 5vw);
+                width: calc(150px + 5vw);
             }
 
             @include breakpoint(1024px) {
-                height: 225px;
-                width: 225px;
+                height: calc(150px + 10vh);
+                width: calc(150px + 10vh);
             }
 
             @include breakpoint(1280px) {
-                height: 250px;
-                width: 250px;
+                height: calc(150px + 15vh);
+                width: calc(150px + 15vh);
             }
 
 
@@ -88,7 +87,7 @@ main {
                     left: 0;
                     background: rgba(0, 0, 0, .6);
                     opacity: 0;
-                    transition:  opacity 0.5s;
+                    transition: opacity 0.3s;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -96,6 +95,8 @@ main {
 
                     h2 {
                         text-align: center;
+                        font-family: "Sofia Sans", cursive;
+                        font-size: 300%;
                     }
 
                     p {
@@ -139,9 +140,7 @@ main {
 
     #SB1 {
         grid-area: SB1;
-        background-color: green;
         border-radius: 0 20px 0 0;
-        align-items: flex-start;
 
 
         img {
@@ -152,7 +151,6 @@ main {
 
     #COLON {
         grid-area: COLON;
-        background-color: yellow;
         border-radius: 0 0 0 20px;
 
         img {
@@ -162,7 +160,6 @@ main {
 
     #SB2 {
         grid-area: SB2;
-        background-color: blueviolet;
         border-radius: 0 0 20px 0;
 
         img {

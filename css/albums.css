@@ -34,32 +34,32 @@ main .albumes .album {
   justify-content: center;
   align-items: center;
   z-index: 0;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   overflow: hidden;
 }
 @media screen and (min-width: 480px) {
   main .albumes .album {
-    height: 175px;
-    width: 175px;
+    height: calc(150px + 5vw);
+    width: calc(150px + 5vw);
   }
 }
 @media screen and (min-width: 768px) {
   main .albumes .album {
-    height: 200px;
-    width: 200px;
+    height: calc(150px + 5vw);
+    width: calc(150px + 5vw);
   }
 }
 @media screen and (min-width: 1024px) {
   main .albumes .album {
-    height: 225px;
-    width: 225px;
+    height: calc(150px + 10vh);
+    width: calc(150px + 10vh);
   }
 }
 @media screen and (min-width: 1280px) {
   main .albumes .album {
-    height: 250px;
-    width: 250px;
+    height: calc(150px + 15vh);
+    width: calc(150px + 15vh);
   }
 }
 main .albumes .album a {
@@ -76,7 +76,7 @@ main .albumes .album a .supertexto {
   left: 0;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +84,8 @@ main .albumes .album a .supertexto {
 }
 main .albumes .album a .supertexto h2 {
   text-align: center;
+  font-family: "Sofia Sans", cursive;
+  font-size: 300%;
 }
 main .albumes .album a .supertexto p {
   text-align: center;
@@ -112,16 +114,13 @@ main #CDBA img {
 }
 main #SB1 {
   grid-area: SB1;
-  background-color: green;
   border-radius: 0 20px 0 0;
-  align-items: flex-start;
 }
 main #SB1 img {
   border-radius: 0 20px 0 0;
 }
 main #COLON {
   grid-area: COLON;
-  background-color: yellow;
   border-radius: 0 0 0 20px;
 }
 main #COLON img {
@@ -129,7 +128,6 @@ main #COLON img {
 }
 main #SB2 {
   grid-area: SB2;
-  background-color: blueviolet;
   border-radius: 0 0 20px 0;
 }
 main #SB2 img {
