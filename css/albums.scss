@@ -49,10 +49,12 @@ main {
             height:120px;
             width: 120px;
             overflow: hidden;
+            font-size: calc(1.325rem + 2vw +2vh);
 
             @include breakpoint(480px) {
                 height: calc(150px + 5vw);
                 width: calc(150px + 5vw);
+                
             }
 
             @include breakpoint(768px) {
@@ -95,12 +97,8 @@ main {
                     h2 {
                         text-align: center;
                         font-family: "Sofia Sans", cursive;
-                        font-size: 300%;
                     }
 
-                    p {
-                        text-align: center;
-                    }
                 }
 
                 img {
