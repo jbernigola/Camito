@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fondo-paginas {
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  filter: blur(0.5vh);
+}
+
+#fondo-CDBA {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+}
+
+#fondo-SB1 {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+}
+
+#fondo-SB2 {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+}
+
+#fondo-COLON {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+}
+
+#fondo-SALIDAS {
+  background-image: url("../assets/img/COLON/para-puzzle1.jpg");
+}/*# sourceMappingURL=paginas.css.map */
